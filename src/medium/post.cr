@@ -13,6 +13,7 @@ module Medium
       slug: String,
       mediumUrl: String,
       canonicalUrl: String,
+      webCanonicalUrl: String,
       createdAt: Int64,
       updatedAt: Int64,
       content: PostContent,
@@ -33,7 +34,7 @@ module Medium
     def to_md
       header = {
         "url"           => mediumUrl,
-        "canonical_url" => canonicalUrl,
+        "canonical_url" => webCanonicalUrl,
         "title"         => @title,
         "subtitle"      => subtitle,
         "slug"          => @slug,

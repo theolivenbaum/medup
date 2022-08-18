@@ -34,6 +34,16 @@ describe Medium::Post do
   end
 
   describe "#to_md" do
+    it "canonical url" do
+      WebMock.stub(:get, "https://miro.medium.com/0*wSoA3zqzobeU3Nwx.jpeg")
+        .to_return(body: "")
+      subject = Medium::Post.from_json(post_without_name_fixture)
+      content, assets = subject.to_md
+      content.should contain <<-HEADER
+      canonical_url: https://medium.com/@seenmyfate/capistrano-version-3-ba896a142ac?webCanonicalUrl
+      HEADER
+    end
+
     it "render full page" do
       subject = Medium::Post.from_json(post_fixture)
       content, assets = subject.to_md
