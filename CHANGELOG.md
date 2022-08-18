@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.8.1] - 2022-08-18
 ### Changed
 - Medium: use field `webCanonicalUrl` for `canonical_url`. (@miry)
 
@@ -172,24 +173,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Relase docker image
 - Dump Medium posts base on author name
 
-[Unreleased]: https://github.com/miry/medup/compare/v0.8.0...HEAD
-[0.8.0]: https://github.commiry/medup/compare/v0.7.0...v0.8.0
-[0.7.0]: https://github.commiry/medup/compare/v0.6.0...v0.7.0
-[0.6.0]: https://github.commiry/medup/compare/v0.5.0...v0.6.0
-[0.5.0]: https://github.commiry/medup/compare/v0.4.1...v0.5.0
-[0.4.1]: https://github.commiry/medup/compare/v0.4.0...v0.4.1
-[0.4.0]: https://github.commiry/medup/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.commiry/medup/compare/v0.2.1...v0.3.0
-[0.2.1]: https://github.commiry/medup/compare/v0.2.0...v0.2.0
-[0.2.0]: https://github.commiry/medup/compare/v0.1.10...v0.2.0
-[0.1.10]: https://github.commiry/medup/compare/v0.1.9...v0.1.10
-[0.1.9]: https://github.commiry/medup/compare/v0.1.8...v0.1.9
-[0.1.8]: https://github.commiry/medup/compare/v0.1.7...v0.1.8
-[0.1.7]: https://github.commiry/medup/compare/v0.1.6...v0.1.7
-[0.1.6]: https://github.commiry/medup/compare/v0.1.5...v0.1.6
-[0.1.5]: https://github.commiry/medup/compare/v0.1.4...v0.1.5
-[0.1.4]: https://github.commiry/medup/compare/v0.1.3...v0.1.4
-[0.1.3]: https://github.commiry/medup/compare/v0.1.2...v0.1.3
-[0.1.2]: https://github.commiry/medup/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.commiry/medup/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.commiry/medup/releases/tag/v0.1.0
+[Unreleased]: https://codeberg.org/miry/medup/compare/v0.8.1...HEAD
+[0.8.0]: https://codeberg.org/miry/medup/compare/v0.8.0...v0.8.1
+[0.8.0]: https://codeberg.org/miry/medup/compare/v0.7.0...v0.8.0
+[0.7.0]: https://codeberg.org/miry/medup/compare/v0.6.0...v0.7.0
+[0.6.0]: https://codeberg.org/miry/medup/compare/v0.5.0...v0.6.0
+[0.5.0]: https://codeberg.org/miry/medup/compare/v0.4.1...v0.5.0
+[0.4.1]: https://codeberg.org/miry/medup/compare/v0.4.0...v0.4.1
+[0.4.0]: https://codeberg.org/miry/medup/compare/v0.3.0...v0.4.0
+[0.3.0]: https://codeberg.org/miry/medup/compare/v0.2.1...v0.3.0
+[0.2.1]: https://codeberg.org/miry/medup/compare/v0.2.0...v0.2.0
+[0.2.0]: https://codeberg.org/miry/medup/compare/v0.1.10...v0.2.0
+[0.1.10]: https://codeberg.org/miry/medup/compare/v0.1.9...v0.1.10
+[0.1.9]: https://codeberg.org/miry/medup/compare/v0.1.8...v0.1.9
+[0.1.8]: https://codeberg.org/miry/medup/compare/v0.1.7...v0.1.8
+[0.1.7]: https://codeberg.org/miry/medup/compare/v0.1.6...v0.1.7
+[0.1.6]: https://codeberg.org/miry/medup/compare/v0.1.5...v0.1.6
+[0.1.5]: https://codeberg.org/miry/medup/compare/v0.1.4...v0.1.5
+[0.1.4]: https://codeberg.org/miry/medup/compare/v0.1.3...v0.1.4
+[0.1.3]: https://codeberg.org/miry/medup/compare/v0.1.2...v0.1.3
+[0.1.2]: https://codeberg.org/miry/medup/compare/v0.1.1...v0.1.2
+[0.1.1]: https://codeberg.org/miry/medup/compare/v0.1.0...v0.1.1
+[0.1.0]: https://codeberg.org/miry/medup/releases/tag/v0.1.0
