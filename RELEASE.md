@@ -63,9 +63,9 @@ $ git tag -s "v${RELEASE_VERSION}"
 $ git push origin master --follow-tags
 ```
 
-## Github Release
+## Release
 
-Create a new release in Github:
+Create a new release in Codeberg:
 - Title should equal to tag name. Example: `v0.1.3`
 - Description should have a text from Changelog
 
@@ -79,16 +79,15 @@ $ rake container:push
 
 ## Update Homebrew versions
 
-- Update [homebrew-medup](https://github.com/miry/homebrew-medup/blob/master/Formula/medup.rb)
+- Update [homebrew-medup](Formula/medup.rb)
 manifest
   1. Update `version` string to your released version;
   1. Update `url` with new release tag;
   1. Update `sha256` from release archive file;
 
 - Do a manual check of installing command line via brew
-  1. While in the homebrew-medup directory...
-     ```shell
-     $ brew install ./medup.rb --debug
+  1.```shell
+     $ brew install ./Formula/medup.rb --debug
      ```
      Note: it's normal to get some errors when homebrew attempts to load the file
      as a Cask instead of a formula, just make sure that it still gets installed.

@@ -188,7 +188,7 @@ Install `medup` tool to the MacOS or Linux via Hombrew:
 
 
 ```shell
-$ brew tap miry/medup
+$ brew tap miry/medup https://codeberg.org/miry/medup
 $ brew install medup
 ```
 
