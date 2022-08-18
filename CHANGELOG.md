@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Because of WYSIWYG, plenty of hidden things that could destroy Markdown.
   Introduce a workaround to have swap places last space and closing elements.
   Ignore links without anchor text.
-  There are still more possibilities to break Markdown. (#59, @miry)
+  There are still more possibilities to break Markdown. (https://github.com/miry/medup/pull/59, @miry)
 
 ## [0.7.0] - 2022-07-22
 ### Changed
@@ -26,20 +26,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Markdown header is YAML compatible. (@miry)
 
 ### Added
-- Introduce `--dry-run` argument to test without filesystem modifications. (#53, @miry)
+- Introduce `--dry-run` argument to test without filesystem modifications. (https://github.com/miry/medup/pull/53, @miry)
 
 ## [0.6.0] - 2022-07-09
 ### Added
-- Introduce Dev.to integration. (#18, @miry)
+- Introduce Dev.to integration. (https://github.com/miry/medup/pull/18, @miry)
 
 ### Changed
-- Use crystal lang 1.5.0 (#56, @miry)
+- Use crystal lang 1.5.0 (https://github.com/miry/medup/pull/56, @miry)
 
 ## [0.5.0] - 2022-05-09
 ### Added
-- Allow to change the download distination for assets with flag `--assets-dir=<DIR>`. (#40, @miry)
+- Allow to change the download distination for assets with flag `--assets-dir=<DIR>`. (https://github.com/miry/medup/pull/40, @miry)
 - Allow to change the uri path for assets inside document with `--assets-base-path=<BASE_PATH>`.
-  It help to access assets in case the global assets path or custom directory. (#40, @miry)
+  It help to access assets in case the global assets path or custom directory. (https://github.com/miry/medup/pull/40, @miry)
 - Support Demo with Bridgetown via command `rake demo:bridgetown:serve`. (@miry)
 
 ## [0.4.1] - 2022-05-02
@@ -47,18 +47,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update article' url tag to get value from response, instead of from commandline
   arguments (@miry)
 - Update the code to use **Context** pattern. Combine in it options, logger and
-  settings. (#47, @miry)
+  settings. (https://github.com/miry/medup/pull/47, @miry)
 
 ### Added
 - Allow to specify `MEDUP_GITHUB_API_TOKEN` environment variable to increase
-  number of requests to gist. (#47, @miry)
+  number of requests to gist. (https://github.com/miry/medup/pull/47, @miry)
 
 ## [0.4.0] - 2022-04-30
 ### Changed
-- Inline gist media as code block inside a result markdown file. (#39, @miry)
-- Inline youtube media as link instead of iframe. (#42, @miry)
-- Inline twitter media as blockquote instead of iframe. (#44, @miry)
-- Inline general embedy media as link with thumbnail image instead of iframe. (#45, @miry)
+- Inline gist media as code block inside a result markdown file. (https://github.com/miry/medup/pull/39, @miry)
+- Inline youtube media as link instead of iframe. (https://github.com/miry/medup/pull/42, @miry)
+- Inline twitter media as blockquote instead of iframe. (https://github.com/miry/medup/pull/44, @miry)
+- Inline general embedy media as link with thumbnail image instead of iframe. (https://github.com/miry/medup/pull/45, @miry)
 
 ### Added
 - Move most of debug output to logger. Allow to specify the verbosity of output
@@ -69,16 +69,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0] - 2022-04-09
 ### Changed
 - Update command line argument parse view. During error make sure the exit code is 1 (@miry)
-- Use `podman` instead of `docker` (#35, @miry)
+- Use `podman` instead of `docker` (https://github.com/miry/medup/pull/35, @miry)
 - Use crystal lang 1.4.0 (@miry)
 
 ### Fixed
 - Custom domain posts returns excpetions, fixed the problem (@miry)
-- Detect downloaded assets' type and add missing extension (#37, @miry)
+- Detect downloaded assets' type and add missing extension (https://github.com/miry/medup/pull/37, @miry)
 
 ### Added
 - Add integration tests to test command line output (@miry)
-- Extract targets(user, publication, single post) base on pattern. Download articles for different targets in same process. (#36, @miry)
+- Extract targets(user, publication, single post) base on pattern. Download articles for different targets in same process. (https://github.com/miry/medup/pull/36, @miry)
 
 ## [0.2.1] - 2022-03-27
 ### Changed
@@ -86,15 +86,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Skip download assets images without option `--assets-images` (@miry)
-- Emoji breaks markdown rendering (#34, @miry, @clawfire)
+- Emoji breaks markdown rendering (https://github.com/miry/medup/pull/34, @miry, @clawfire)
 
 ## [0.2.0] - 2022-03-20
 ### Changed
-- Use crystal lang 1.3.2 (#31, @miry)
+- Use crystal lang 1.3.2 (https://github.com/miry/medup/pull/31, @miry)
 
 ### Added
-- Export posts from a publication with option `--publication=NAME` (#31, @miry, @clawfire)
-- Allow to save images to assets folder with option `--assets-images` (#33, @miry, @clawfire)
+- Export posts from a publication with option `--publication=NAME` (https://github.com/miry/medup/pull/31, @miry, @clawfire)
+- Allow to save images to assets folder with option `--assets-images` (https://github.com/miry/medup/pull/33, @miry, @clawfire)
 
 ## [0.1.10] - 2021-04-17
 ### Added
@@ -108,9 +108,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.9] - 2020-09-17
 ### Changed
-- Filename sanitization (#19, @miry)
-- Embed images to single document (#3, @miry)
-- Download posts in 2 concurent processes (#17, @miry)
+- Filename sanitization (https://github.com/miry/medup/pull/19, @miry)
+- Embed images to single document (https://github.com/miry/medup/pull/3, @miry)
+- Download posts in 2 concurent processes (https://github.com/miry/medup/pull/17, @miry)
 - Use crystal lang 0.35.1
 
 ## [0.1.8] - 2020-05-22
@@ -120,28 +120,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.7] - 2020-03-15
 ### Added
-- Process only one article: medup <url> (#24, @miry)
+- Process only one article: medup <url> (https://github.com/miry/medup/pull/24, @miry)
 
 ## [0.1.6] - 2020-03-12
 ### Added
-- Add command line argument to allow update overwrite file content (#16, @miry)
-- Fix small parsing issues (#25, #27, @miry)
+- Add command line argument to allow update overwrite file content (https://github.com/miry/medup/pull/16, @miry)
+- Fix small parsing issues (https://github.com/miry/medup/pull/25, https://github.com/miry/medup/pull/27, @miry)
 
 ## [0.1.5] - 2020-01-21
 ### Added
-- Markdown: Store subtitle, tags and SEO description information (#7, @miry)
+- Markdown: Store subtitle, tags and SEO description information (https://github.com/miry/medup/pull/7, @miry)
 - Markdown: Store authors information (@miry)
-- Export user's recommened articles (#2, @miry)
-- Don't raise exceptions for paragraph type 2: with images in background, title and alignment (#2, @miry)
-- Print error messages to STDERR (#2, @miry)
-- Specify import format via command line (#23, @miry)
+- Export user's recommened articles (https://github.com/miry/medup/pull/2, @miry)
+- Don't raise exceptions for paragraph type 2: with images in background, title and alignment (https://github.com/miry/medup/pull/2, @miry)
+- Print error messages to STDERR (https://github.com/miry/medup/pull/2, @miry)
+- Specify import format via command line (https://github.com/miry/medup/pull/23, @miry)
 
 ### Changed
-- Create missing subfolders with more than 1 layer (#2, @miry)
+- Create missing subfolders with more than 1 layer (https://github.com/miry/medup/pull/2, @miry)
 
 ## [0.1.4] - 2019-12-28
 ### Added
-- Markdown: Support inline formatting (#6, @miry)
+- Markdown: Support inline formatting (https://github.com/miry/medup/pull/6, @miry)
 
 ## [0.1.3] - 2019-12-21
 ### Added
