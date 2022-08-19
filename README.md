@@ -101,7 +101,7 @@ It is possible to save images in separate folder with arguments - `--assets-imag
 
 ```shell
 $ medup @miry --assets-images -d posts/miry
-$  $ tree posts/miry
+$ tree posts/miry
 posts/miry
 ├── 2017-03-20-war-with-ads-and-trackers.md
 ├── 2017-03-26-setup-k8s-v1-6-0-rc-1-cluster.md
