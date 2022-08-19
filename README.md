@@ -188,15 +188,15 @@ Install `medup` tool to the MacOS or Linux via Hombrew:
 
 
 ```shell
-$ brew tap miry/medup https://codeberg.org/miry/medup
-$ brew install medup
+brew tap miry/medup https://codeberg.org/miry/medup
+brew install medup
 ```
 
 Run export command for **Medium** author *miry* and save articles to local folder:
 
 ```shell
-$ medup -u miry -d .
-$ medup -d . https://medium.com/notes-and-tips-in-full-stack-development/medup-backups-articles-8bf90179b094
+medup -u miry -d .
+medup -d . https://medium.com/notes-and-tips-in-full-stack-development/medup-backups-articles-8bf90179b094
 ```
 
 ## Docker
@@ -204,13 +204,13 @@ $ medup -d . https://medium.com/notes-and-tips-in-full-stack-development/medup-b
 Docker way to make same job:
 
 ```shell
-$ docker run -v <path to local articles folder>:/posts -it miry/medup -u <user>
+docker run -v <path to local articles folder>:/posts -it miry/medup -u <user>
 ```
 
 Download all articles that user has recommended:
 
 ```shell
-$ docker run -v <path to local articles folder>:/posts -it miry/medup -u <user> --recommended -d posts/recommended
+docker run -v <path to local articles folder>:/posts -it miry/medup -u <user> --recommended -d posts/recommended
 ```
 
 ## Crystal
@@ -218,14 +218,14 @@ $ docker run -v <path to local articles folder>:/posts -it miry/medup -u <user> 
 Run dumping with source code
 
 ```shell
-$ shards install
-$ crystal run src/cli.cr -- -u <medium user> -d <destination folder>
+shards install
+crystal run src/cli.cr -- -u <medium user> -d <destination folder>
 ```
 
 Example download all posts from author https://medium.com/@miry to local folder `posts/miry`
 
 ```shell
-$ crystal run src/cli.cr -- -u miry -d posts/miry
+crystal run src/cli.cr -- -u miry -d posts/miry
 ```
 
 ## Build
@@ -233,9 +233,9 @@ $ crystal run src/cli.cr -- -u miry -d posts/miry
 Build a application binary and execute:
 
 ```shell
-$ shards install
-$ rake build
-$ _output/medup -u <medium user> -d <destination folder>
+shards install
+rake build
+_output/medup -u <medium user> -d <destination folder>
 ```
 
 # Result
@@ -264,26 +264,26 @@ There are possible solution to test export markdown files.
 Run a test Jekyll server with posts. Example:
 
 ```shell
-$ rake demo:serve
+rake demo:serve
 ```
 
 And after it finishes you can test http://localhost:4000.
 Update posts for demo:
 
 ```shell
-$ medup -v7 -d demo/_posts/ --assets-dir=demo/assets --assets-base-path=/assets <url>|<@user>|<publisher>
+medup -v7 -d demo/_posts/ --assets-dir=demo/assets --assets-base-path=/assets <url>|<@user>|<publisher>
 ```
 
 Test Bridgetown use next command:
 
 ```shell
-$ rake demo:bridgetown:serve
+rake demo:bridgetown:serve
 ```
 
 Bridgetown has a bit different structure for posts. Use to update posts:
 
 ```shell
-$ medup -v7 -d demo/src/_posts/ --assets-dir=demo/src/assets --assets-base-path=/assets <url>|<@user>|<publisher>
+medup -v7 -d demo/src/_posts/ --assets-dir=demo/src/assets --assets-base-path=/assets <url>|<@user>|<publisher>
 ```
 
 # Contributing
@@ -310,19 +310,19 @@ This project is under the LGPL-3.0 license.
 
 * Clean unused assets:
 ```shell
-$ for i in $(ls -1 assets/*); do grep -q "$i" *.md || echo $i; done | xargs rm
+for i in $(ls -1 assets/*); do grep -q "$i" *.md || echo $i; done | xargs rm
 ```
 * Detect potential articles with **IFRAME** content for gists:
 ```shell
-$ for i in $(ls -1 assets/*.html); do grep "gist.github.com" -q $i && grep -n "$i" *.md; done
+for i in $(ls -1 assets/*.html); do grep "gist.github.com" -q $i && grep -n "$i" *.md; done
 ```
 * Detect potential articles' url with **IFRAME** content for gists:
 ```shell
-$ for i in $(ls -1 assets/*.html); do grep "gist.github.com" -q $i && (grep -l "$i" *.md | xargs head | grep url); done
+for i in $(ls -1 assets/*.html); do grep "gist.github.com" -q $i && (grep -l "$i" *.md | xargs head | grep url); done
 ```
 * Detect potential articles' url with **IFRAME** content for youtube:
 ```shell
-$ for i in $(ls -1 assets/*.html); do grep "schema=youtube" -q $i && (grep -l "$i" *.md | xargs head | grep url); done
+for i in $(ls -1 assets/*.html); do grep "schema=youtube" -q $i && (grep -l "$i" *.md | xargs head | grep url); done
 ```
 
 ### Medium API
@@ -333,7 +333,7 @@ $ for i in $(ls -1 assets/*.html); do grep "schema=youtube" -q $i && (grep -l "$
 
 1. Verify token with sample query:
 ```shell
-$ curl -H "Authorization: Bearer <token>" https://api.medium.com/v1/me
+curl -H "Authorization: Bearer <token>" https://api.medium.com/v1/me
 {"data":{"id":"number","username":"miry","name":"Michael Nikitochkin","url":"https://medium.com/@miry","imageUrl":"https://cdn-images-1.medium.com/fit/c/400/400/0*KgbjgGnH-csHuB8j."}}
 ```
 
@@ -341,12 +341,12 @@ $ curl -H "Authorization: Bearer <token>" https://api.medium.com/v1/me
 
 1. Check public information not covered by API
 ```shell
-$ curl "https://medium.com/@miry?format=json" | cut -c17- && : Remove in the front from response some strange JS code.
+curl "https://medium.com/@miry?format=json" | cut -c17- && : Remove in the front from response some strange JS code.
 ```
 
 2. Pagination
 ```shell
-$ curl "https://medium.com/@miry/latest?format=json&limit=100" | cut -c17- && : Remove in the front from response some strange JS code.
+curl "https://medium.com/@miry/latest?format=json&limit=100" | cut -c17- && : Remove in the front from response some strange JS code.
 ```
 
 3. Post info
@@ -356,14 +356,14 @@ curl -s -H "Content-Type: application/json" https://medium.com/@miry/c35b40c499e
 
 4. Stream
 ```shell
-$ curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?source=overview" | cut -c17-
-$ curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?limit=100&page=3" | cut -c17- > stream.json
-$ cat stream.json| jq ".payload.references.Post[].title"
-$ cat stream.json| jq ".payload.paging.next"
+curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?source=overview" | cut -c17-
+curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?limit=100&page=3" | cut -c17- > stream.json
+cat stream.json| jq ".payload.references.Post[].title"
+cat stream.json| jq ".payload.paging.next"
 ```
 
 5. Recommendations
 ```shell
-$ curl -s -H "Content-Type: application/json" https://medium.com/@miry/has-recommended | cut -c17-
-$ curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?source=has-recommended" | cut -c17-
+curl -s -H "Content-Type: application/json" https://medium.com/@miry/has-recommended | cut -c17-
+curl -s -H "Content-Type: application/json" "https://medium.com/_/api/users/fdf238948af6/profile/stream?source=has-recommended" | cut -c17-
 ```
