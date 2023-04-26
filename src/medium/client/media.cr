@@ -3,6 +3,7 @@ module Medium
   class Client
     module Media
       def media(id : String)
+        puts "Fetching media" + id
         download("/media/" + id)
       end
     end

@@ -8,7 +8,9 @@ module Medium
 
         params : Hash(String, String)? = {"limit" => "100", "source" => source}
         stream_url = "/_/api/users/#{user_id}/profile/stream"
+
         while params
+          puts "Fetching url" + stream_url
           response = get(stream_url, params: params)
           records = response["payload"]["references"]["Post"]
 
@@ -34,6 +36,7 @@ module Medium
         params : Hash(String, String)? = {"limit" => "100", "source" => source}
         stream_url = "/_/api/users/#{user_id}/profile/stream"
         while params
+          puts "Fetching url" + stream_url
           response = get(stream_url, params: params)
           records = response["payload"]["streamItems"]
 
