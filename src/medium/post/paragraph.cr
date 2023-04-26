@@ -128,7 +128,8 @@ module Medium
       end
 
       def download_image(name : String)
-        src = "https://miro.medium.com/#{name}"
+        #src = "https://miro.medium.com/#{name}"
+        src = "https://miro.medium.com/v2/#{name}"
         response = HTTP::Client.get(src)
         @logger.debug "GET #{src} => #{response.status_code} #{response.status_message}"
         @logger.info 12, response.headers.to_s
