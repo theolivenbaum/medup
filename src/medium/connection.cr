@@ -53,7 +53,7 @@ module Medium
 
       error = Medium::Error.from_response(response)
       raise error if error
-
+      puts response
       JSON.parse(response.body[16..])
     end
 
