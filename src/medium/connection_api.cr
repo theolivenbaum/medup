@@ -5,14 +5,17 @@ module Medium
     HOST = "api.medium.com"
 
     def get(endpoint, headers : HTTP::Headers? = nil, body : String? = nil)
+      puts "GET: #{endpoint}"
       request "GET", endpoint, headers, body
     end
 
     def post(endpoint, headers : HTTP::Headers? = nil, body : String? = nil)
+      puts "POST: #{endpoint}"
       request "POST", endpoint, headers, body
     end
 
     def patch(endpoint, headers : HTTP::Headers? = nil, body : String? = nil)
+      puts "PATCH: #{endpoint}"
       request "PATCH", endpoint, headers, body
     end
 

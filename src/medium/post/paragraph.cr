@@ -121,9 +121,9 @@ module Medium
       def download(name : String)
         src = "https://medium.com/media/#{name}"
         response = HTTP::Client.get(src)
-        @logger.info "GET #{src} => #{response.status_code} #{response.status_message}"
-        @logger.info 12, response.headers.to_s
-        @logger.info 12, response.body
+        puts "GET #{src} => #{response.status_code} #{response.status_message}"
+        puts 12, response.headers.to_s
+        puts 12, response.body
         return response.body, response.content_type
       end
 
@@ -132,7 +132,7 @@ module Medium
         src = "https://miro.medium.com/v2/#{name}"
         response = HTTP::Client.get(src)
         @logger.debug "GET #{src} => #{response.status_code} #{response.status_message}"
-        @logger.info 12, response.headers.to_s
+        puts 12, response.headers.to_s
         filename = name
         ext = File.extname(filename)
         if ext == ""
@@ -202,10 +202,10 @@ module Medium
 
         3.times do
           response = HTTP::Client.get(src, headers: headers)
-          @logger.info "GET #{src} => #{response.status_code} #{response.status_message}"
-          @logger.info 10, "Request Headers:\n" + headers.to_s
-          @logger.info 10, "Response Headers:\n" + response.headers.to_s
-          @logger.info 12, response.body
+          puts "GET #{src} => #{response.status_code} #{response.status_message}"
+          puts 10, "Request Headers:\n" + headers.to_s
+          puts 10, "Response Headers:\n" + response.headers.to_s
+          puts 12, response.body
           break if response.status_code != 403
           sleep 3 # 3 seconds
         end

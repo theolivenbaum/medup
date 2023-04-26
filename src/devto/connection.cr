@@ -52,18 +52,18 @@ module Devto
       end
 
       response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
-      @logger.info "#{method} #{uri} => #{response.status_code} #{response.status_message}"
+      puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
 
       limit = 10
       while limit > 0 && response.status_code >= 300 && response.status_code < 400
         endpoint = response.headers["location"]
         uri = URI.parse endpoint
         response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
-        @logger.info "#{method} #{uri} => #{response.status_code} #{response.status_message}"
+        puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
         limit -= 1
       end
 
-      @logger.info 12, response.body
+      puts 12, response.body
       error = ::Devto::Error.from_response(response)
       raise error if error
 

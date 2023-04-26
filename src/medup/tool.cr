@@ -67,7 +67,7 @@ module Medup
     end
 
     def process_posts_async(posts)
-      @logger.info "Posts count: #{posts.size}"
+      puts "Posts count: #{posts.size}"
 
       channel_start = Channel(String).new(2)
       channel_finished = Channel(String).new(2)
@@ -119,7 +119,7 @@ module Medup
           File.rename(filepath, filepath + ".old")
         end
       end
-      @logger.info "Create file #{filepath}"
+      puts "Create file #{filepath}"
 
       if format == "json"
         if !@ctx.settings.dry_run?

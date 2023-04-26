@@ -9,6 +9,7 @@ module Medium
 
     def get(endpoint, params : Hash(String, String)? = nil, headers : HTTP::Headers? = nil, body : String? = nil)
       params = DEFAULT_PARAMS.merge(params || Hash(String, String).new)
+      puts "GET: #{endpoint}"
       request "GET", endpoint, params, headers, body
     end
 
@@ -39,14 +40,14 @@ module Medium
       end
 
       response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
-      @logger.info "#{method} #{uri} => #{response.status_code} #{response.status_message}"
+      puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
 
       limit = 10
       while limit > 0 && response.status_code >= 300 && response.status_code < 400
         endpoint = response.headers["location"]
         uri = URI.parse endpoint
         response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
-        @logger.info "#{method} #{uri} => #{response.status_code} #{response.status_message}"
+        puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
         limit -= 1
       end
 
