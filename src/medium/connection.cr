@@ -39,6 +39,7 @@ module Medium
         uri.query_params = o
       end
 
+      puts "REQUEST: #{method.upcase}: #{uri.host}/#{uri.request_target}"
       response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
       puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
 
