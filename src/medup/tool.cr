@@ -38,7 +38,7 @@ module Medup
       posts = Array(String).new
       user = @user
       publication = @publication
-
+      puts "Starting backup for #{publication}"
       posts = if @ctx.platform_medium?
                 client = @client.adapter.as(Medium::Client)
                 Medium::Client.default = client
