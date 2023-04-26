@@ -18,6 +18,7 @@ module Medium
       if host == "/"
         host = HOST
       end
+      puts "Getting http client for '#{host}'"
       if @http.has_key?(host)
         return @http[host].not_nil!
       end
