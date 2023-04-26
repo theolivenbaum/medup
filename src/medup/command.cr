@@ -130,7 +130,7 @@ module Medup
         users << {user: user, platform: ""}
       end
       users.each do |u|
-        puts "Backing up " + u
+        puts "Backing up " + u["user"] + " from " + u["platform"]
         c = ctx.dup
         if u["platform"] != "" && u["platform"] != ctx.settings.platform
           s = ctx.settings.dup
