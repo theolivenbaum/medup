@@ -72,7 +72,7 @@ module Devto
 
     def download(endpoint : String)
       response = http.exec("GET", endpoint)
-      @logger.debug "GET #{endpoint} => #{response.status_code} #{response.status_message}"
+      puts "GET #{endpoint} => #{response.status_code} #{response.status_message}"
       error = Medium::Error.from_response(response)
       raise error if error
       response.body

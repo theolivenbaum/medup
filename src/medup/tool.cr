@@ -136,7 +136,7 @@ module Medup
       if @ctx.settings.assets_image?
         assets.each do |filename, content|
           filepath = File.join(@assets_dist, filename)
-          @logger.debug "Create asset #{filepath}"
+          puts "Create asset #{filepath}"
           if !@ctx.settings.dry_run?
             File.write(filepath, content)
           end
@@ -146,7 +146,7 @@ module Medup
 
     def create_directory(path)
       unless File.directory?(path)
-        @logger.debug "Create directory #{path}"
+        puts "Create directory #{path}"
         Dir.mkdir_p(path) if !@ctx.settings.dry_run?
       end
     end

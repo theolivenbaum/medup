@@ -130,8 +130,9 @@ module Medium
       def download_image(name : String)
         #src = "https://miro.medium.com/#{name}"
         src = "https://miro.medium.com/v2/#{name}"
+        puts "Processing image : #{src}"
         response = HTTP::Client.get(src)
-        @logger.debug "GET #{src} => #{response.status_code} #{response.status_message}"
+        puts "GET #{src} => #{response.status_code} #{response.status_message}"
         puts 12, response.headers.to_s
         filename = name
         ext = File.extname(filename)
@@ -146,7 +147,7 @@ module Medium
       end
 
       def process_youtube_content(content : String) : String
-        @logger.debug 7, "Processing youtube element"
+        puts "Processing youtube element: #{content}"
         m = content.match(/\<iframe[^\>]*widgets\/media\.html\?.*(&amp;)?url=(?<url>[^&;]*)&amp;/)
         return "" if m.nil?
         m = m.not_nil!
@@ -158,7 +159,7 @@ module Medium
       end
 
       def process_embedly_content(content : String) : String
-        @logger.debug 7, "Processing embedly element"
+        puts "Processing embedly element: #{content}"
         m = content.match(/\<iframe[^\>]*src="(?<src>[^"]*)"/)
         return "" if m.nil? || m["src"].empty?
         embedly_url = URI.parse(m["src"])
@@ -186,7 +187,7 @@ module Medium
 
       def fetch_gist(id : String?)
         return nil if id.nil?
-
+        puts "Processing gist: #{id}"
         src = "https://api.github.com/gists/#{id}"
         response : HTTP::Client::Response? = nil
 
@@ -236,7 +237,7 @@ module Medium
       end
 
       def process_gist_content(content : String) : String
-        @logger.debug 7, "Processing gist element"
+        puts "Processing gist element: #{content}"
         m = content.match(/\<script src=\"https:\/\/gist\.github\.com\/[^\/]*\/(?<id>[^"]*).js/)
         return "" if m.nil?
 
@@ -251,7 +252,8 @@ module Medium
       end
 
       def process_twitter_content(content : String) : String
-        @logger.debug 7, "Processing twitter element"
+        puts "Processing twitter element: #{content}"
+        
         m = content.match(/<meta[^>]*name="description"[^>]*>/m)
         return "" if m.nil?
 
@@ -300,7 +302,7 @@ module Medium
 
             if result.ends_with?(" ")
               @logger.warn 4, "Space is before closing element. Swapping order."
-              @logger.debug 7, "Swapping just after text: #{(result[-30..]? || result).inspect}"
+              puts "Swapping just after text: #{(result[-30..]? || result).inspect}"
               remember_last_space = true
               result = result.rchop
             end
