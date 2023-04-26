@@ -15,6 +15,9 @@ module Medium
 
     def http(host : String? = HOST) : HTTP::Client
       host ||= HOST
+      if host == "/"
+        host = HOST
+      end
       if @http.has_key?(host)
         return @http[host].not_nil!
       end
@@ -39,7 +42,7 @@ module Medium
         uri.query_params = o
       end
 
-      puts "REQUEST: #{method.upcase}: #{uri.host}/#{uri.request_target}"
+      puts "REQUEST: #{method.upcase}: #{uri.request_target}"
       response = http(uri.host).exec(method: method.upcase, path: uri.request_target, headers: headers, body: body)
       puts "#{method} #{uri} => #{response.status_code} #{response.status_message}"
 
